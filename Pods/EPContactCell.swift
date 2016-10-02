@@ -87,6 +87,27 @@ class EPContactCell: UITableViewCell {
             self.contactDetailTextLabel.text = contact.birthdayString
         case SubtitleCellValue.organization:
             self.contactDetailTextLabel.text = contact.company
+        case SubtitleCellValue.phoneNumberOrEmail:
+            let phoneNumberCount = contact.phoneNumbers.count
+            let emailCount = contact.emails.count
+            if phoneNumberCount > 0 {
+                if phoneNumberCount == 1  {
+                    self.contactDetailTextLabel.text = "\(contact.phoneNumbers[0].phoneNumber)"
+                }
+                else if phoneNumberCount > 1 {
+                    self.contactDetailTextLabel.text = "\(contact.phoneNumbers[0].phoneNumber) and \(contact.phoneNumbers.count-1) more"
+                }
+            } else if emailCount > 0 {
+                if emailCount == 1  {
+                    self.contactDetailTextLabel.text = "\(contact.emails[0].email)"
+                }
+                else if emailCount > 1 {
+                    self.contactDetailTextLabel.text = "\(contact.emails[0].email) and \(contact.emails.count-1) more"
+                }
+            } else {
+                self.contactDetailTextLabel.text = EPGlobalConstants.Strings.phoneNumberOrEmailNotAvaialable
+            }
         }
+
     }
 }

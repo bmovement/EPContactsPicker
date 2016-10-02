@@ -16,6 +16,7 @@ struct EPGlobalConstants {
         static let birdtdayDateFormat = "MMM d"
         static let contactsTitle = "Contacts"
         static let phoneNumberNotAvaialable = "No phone numbers available"
+        static let phoneNumberOrEmailNotAvaialable = "No phone numbers or email addresses"
         static let emailNotAvaialable = "No emails available"
         static let bundleIdentifier = "EPContactsPicker"
         static let cellNibIdentifier = "EPContactCell"

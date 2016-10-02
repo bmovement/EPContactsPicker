@@ -31,6 +31,7 @@ public enum SubtitleCellValue{
     case email
     case birthday
     case organization
+    case phoneNumberOrEmail
 }
 
 open class EPContactsPicker: UITableViewController, UISearchResultsUpdating, UISearchBarDelegate {
